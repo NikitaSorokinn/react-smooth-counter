@@ -1,10 +1,14 @@
-#react-smooth-counter
+# react-smooth-counter
+
 ![](https://user-images.githubusercontent.com/47715137/91746549-13196880-ebbd-11ea-987f-bb46e82d73d2.gif)
-###Install
+
+### Install
+
 ```
 npm i react-smooth-counter
 ```
-###Basic usage:
+### Basic usage:
+
 ```jsx
 <SmoothCounter
     delay={0}
@@ -14,7 +18,8 @@ npm i react-smooth-counter
     className={'randomClass'}
 />
 ```
-###Props
+### Props
+
 necessarily(*)
 
 | Props  | Functionality |
