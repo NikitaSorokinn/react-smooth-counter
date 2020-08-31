@@ -1,3 +1,5 @@
+[![NPM version](https://img.shields.io/badge/npm-v1.0.0-brightgreen)](https://www.npmjs.com/package/react-smooth-countero)
+
 # react-smooth-counter
 
 ![](https://user-images.githubusercontent.com/47715137/91746549-13196880-ebbd-11ea-987f-bb46e82d73d2.gif)
