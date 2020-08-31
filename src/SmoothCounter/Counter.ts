@@ -4,45 +4,47 @@ export default class Counter implements ISmoothCounter{
 
     $el: HTMLElement | null;
     delay: number | undefined;
-    from: number;
+    defaultNumber: number;
     to: number;
 
-    constructor(elID: string, from: number, to: number, delay?: number) {
-        this.$el = document.getElementById(elID)
-        this.delay = delay
-        this.from = Math.round(from)
-        this.to = Math.round(to)
-
+    constructor(spanEl: HTMLElement | null, defaultNumber: number) {
+        this.$el = spanEl
+        this.defaultNumber = defaultNumber
         if (this.$el === null) throw new Error("Span has not found")
-        this.$el.innerHTML = this.from.toString()
+    }
 
-        if (this.delay === undefined) this.delay = 0
+    count = (to: number, delay: number): void => {
+        this.to = Math.round(to)
+        this.delay = delay
 
+        this.$el.innerText = this.defaultNumber.toString()
         this.delayPromise().then(()=>{this.animateCounter()})
     }
 
     animateCounter = (): void => {
-
         let sign: number = 1
-        let currentCount: number = Number(this.$el.innerHTML)
+        let currentCount: number = Number(this.$el.innerText)
         let left: number = this.to - currentCount
 
         if (currentCount > this.to) {
             sign = -1
             left = currentCount - this.to
         }
-        if (currentCount === this.to) return
+        if (currentCount === this.to) {
+            this.defaultNumber = this.to
+            return
+        }
 
-        let incrementRadius: number = Math.round(left / 18)
-        const increment = incrementRadius === 0 ? 1 : incrementRadius * 2
+        let incrementRadius: number = Math.round(left / 10)
+        const increment: number = incrementRadius === 0 ? 1 : incrementRadius * 2
         currentCount = currentCount + (increment * sign)
 
-        this.$el.innerHTML = currentCount.toString()
+        this.$el.innerText = currentCount.toString()
 
         requestAnimationFrame(this.animateCounter)
     }
 
-    delayPromise = () => {
+    delayPromise = (): Promise<undefined> => {
         return new Promise<undefined>((resolve)=>{
             setTimeout(()=>{
                 resolve()

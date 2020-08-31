@@ -1,0 +1,7 @@
+/src
+/webpackConf
+tsconfig.json
+!/lib
+.gitignore
+.idea
+*.tgz

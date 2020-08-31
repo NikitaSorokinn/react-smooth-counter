@@ -1,20 +1,25 @@
-import React, {useEffect} from 'react'
+import React, {Dispatch, useLayoutEffect, useState, useRef} from 'react'
 
-import {ISmoothCounterProps} from "./interfaces";
+import {ISmoothCounterProps, ISmoothCounter} from "./interfaces";
 
 import Counter from "./Counter";
 
 const SmoothCounter: React.FC<ISmoothCounterProps> =
-    ({from, to, className= "", delay, style= {}}) => {
+    ({startNumber = 0, to, className= "", delay = 0, style= {}}) => {
 
-    const spanId:string = "react-smooth-counter-span-id"
+    const spanEl = useRef(null)
+    let [iCount, setCount]: [ISmoothCounter | undefined, Dispatch<any>] = useState()
 
-    useEffect(()=>{
-        new Counter(spanId, from, to, delay)
-    },[])
+    useLayoutEffect(()=>{
+        setCount(new Counter(spanEl.current, startNumber))
+    }, [])
+
+    useLayoutEffect(()=>{
+        if (iCount !== undefined) iCount.count(to, delay)
+    }, [iCount, to])
 
     return (
-        <span id={spanId} style={style} className={className}>
+        <span ref={spanEl} style={style} className={className}>
         </span>
     )
 }
