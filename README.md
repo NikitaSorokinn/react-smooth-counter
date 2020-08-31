@@ -1,4 +1,4 @@
-[![NPM version](https://img.shields.io/badge/npm-v1.0.0-brightgreen)](https://www.npmjs.com/package/react-smooth-countero)
+[![NPM version](https://img.shields.io/badge/npm-v1.0.0-brightgreen)](https://www.npmjs.com/package/react-smooth-counter)
 
 # react-smooth-counter
 
