@@ -12,6 +12,8 @@ npm i react-smooth-counter
 ### Basic usage:
 
 ```jsx
+import SmoothCounter from 'react-smooth-counter'
+
 <SmoothCounter
     delay={0}
     startNumber={0}
