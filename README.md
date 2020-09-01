@@ -4,7 +4,7 @@
 
 ![](https://user-images.githubusercontent.com/47715137/91746549-13196880-ebbd-11ea-987f-bb46e82d73d2.gif)
 
-### Install
+### Install:
 
 ```
 npm i react-smooth-counter
@@ -20,14 +20,14 @@ npm i react-smooth-counter
     className={'randomClass'}
 />
 ```
-### Props
+### Props:
 
 necessarily(*)
 
 | Props  | Functionality |
 | ------------- | ------------- |
-| delay  | Time period before counting. |
-| startNumber | Start number. |
-| to* | End number. |
-| style | JavaScript style object. |
-| className | CSS classes. |
+| delay  | Time period before counting |
+| startNumber | Start number |
+| to* | End number |
+| style | JavaScript style object |
+| className | CSS classes |
