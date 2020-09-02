@@ -1,6 +1,6 @@
 {
   "name": "react-smooth-counter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Smooth counter built with React",
   "main": "./lib/SmoothCounter.js",
   "scripts": {
