@@ -5,11 +5,11 @@ const pkg = require('../package.json');
 
 const buildWebpackConfig = merge(baseWebpackConfig,
     {
-        entry: `${baseWebpackConfig.externals.path.src}/SmoothCounter/index.tsx`,
+        entry: `${baseWebpackConfig.externals.path.src}/components/SmoothCounter/entry.ts`,
         mode: "production",
         output: {
             path: path.resolve('lib'),
-            filename: 'SmoothCounter.js',
+            filename: 'AnimateCounter.js',
             library: pkg.name,
             libraryTarget: 'commonjs2',
         },

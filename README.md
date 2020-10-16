@@ -12,9 +12,9 @@ npm i react-smooth-counter
 ### Basic usage:
 
 ```jsx
-import SmoothCounter from 'react-smooth-counter'
+import {FastCounter} from 'react-smooth-counter'
 
-<SmoothCounter
+<FastCounter
     delay={0}
     startNumber={0}
     to={852}

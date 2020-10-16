@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-import SmoothCounter from './SmoothCounter';
+import {FastCounter} from "./components/SmoothCounter/entry";
 
 const App: React.FC = () => {
 
@@ -17,9 +17,9 @@ const App: React.FC = () => {
                 alignContent: 'center'
             }
         }>
-            <SmoothCounter
+            <FastCounter
                 delay={0}
-                startNumber={0}
+                startNumber={counterTo}
                 to={counterTo}
                 style={{color: 'grey', fontSize: 50, fontWeight: 'bold', width: '100%'}}
                 className={'randomClass'}
@@ -29,7 +29,7 @@ const App: React.FC = () => {
                     style={buttonStyle}
                     onClick={()=>setCounterTo(
                     state => {
-                        return state - 213
+                        return state - 123
                         }
                     )}
                 >
@@ -39,7 +39,7 @@ const App: React.FC = () => {
                     style={buttonStyle}
                     onClick={()=>setCounterTo(
                     state => {
-                            return state + 213
+                            return state + 123
                         }
                     )}
                 >
