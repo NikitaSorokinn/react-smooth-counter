@@ -2,7 +2,7 @@
   "name": "react-smooth-counter",
   "version": "1.0.1",
   "description": "Smooth counter built with React",
-  "main": "./lib/SmoothCounter.js",
+  "main": "./lib/AnimateCounter.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpackConf/webpack.start.conf.js",
     "build": "webpack --config ./webpackConf/webpack.build.conf.js"
