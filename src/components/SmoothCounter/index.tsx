@@ -11,12 +11,19 @@ export const useCounter = (startNumber: number, endNumber: number,
     const spanEl = useRef(null)
     const [iCounter, setCounter]: [ICounter | undefined, Dispatch<ICounter>] = useState()
 
+    const count = (counter: ICounter) => {
+        counter.count(endNumber, delayMs)
+    }
+
     useLayoutEffect(()=>{
-       setCounter(new AnimateCounter(spanEl.current, startNumber, IDelay, IAnimation))
+
+        const counterImplement: ICounter = new AnimateCounter(spanEl.current, startNumber, IDelay, IAnimation)
+        if (startNumber !== endNumber) count(counterImplement)
+        setCounter(counterImplement)
     }, [])
 
     useLayoutEffect(()=>{
-        if (iCounter !== undefined) iCounter.count(endNumber, delayMs)
+        if (iCounter !== undefined) count(iCounter)
     }, [iCounter, endNumber])
 
     return (

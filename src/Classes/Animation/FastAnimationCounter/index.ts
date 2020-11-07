@@ -17,7 +17,7 @@ export class FastAnimationCounter extends Animation {
         }
 
         let incrementRadius: number = Math.round(left / 10)
-        const increment: number = incrementRadius === 0 ? 1 : incrementRadius * 2
+        const increment: number = incrementRadius === 0 ? 1 : incrementRadius
         currentCount = currentCount + (increment * sign)
 
         htmlElement.innerText = currentCount.toString()

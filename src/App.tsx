@@ -19,7 +19,7 @@ const App: React.FC = () => {
         }>
             <FastCounter
                 delay={0}
-                startNumber={counterTo}
+                startNumber={0}
                 to={counterTo}
                 style={{color: 'grey', fontSize: 50, fontWeight: 'bold', width: '100%'}}
                 className={'randomClass'}
